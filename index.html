@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width,
+          user-scalable=no,
+          initial-scale=1.0,
+          maximum-scale=1.0,
+          minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:500" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div id="container"></div>
+  <script>
+    var data = {
+      "Рыбы": {
+        "Форель": {},
+        "Щука": {}
+      },
+      "Деревья": {
+        "Хвойные": {
+          "Лиственница": {},
+          "Ель": {}
+        },
+        "Цветковые": {
+          "Берёза": {},
+          "Тополь": {}
+        }
+
+      }
+    };
+    function createTree(container, obj) {
+      container.innerHTML = createTreeText(obj);
+    }
+    function createTreeText(obj) {
+      let li = '';
+      for (var key in obj) {
+        li = li + '<li>' + key + createTreeText(obj[key]) + '</li>';
+      }
+      if (li) {
+        var ul = '<ul>' + li + '</ul>'
+      }
+      return ul || '';
+    }
+    var container = document.getElementById('container');
+    createTree(container, data);
+  </script>
+</body>
+</html>
