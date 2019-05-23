@@ -15,39 +15,6 @@
 </head>
 <body>
   <div id="container"></div>
-  <script>
-    var data = {
-      "Рыбы": {
-        "Форель": {},
-        "Щука": {}
-      },
-      "Деревья": {
-        "Хвойные": {
-          "Лиственница": {},
-          "Ель": {}
-        },
-        "Цветковые": {
-          "Берёза": {},
-          "Тополь": {}
-        }
-
-      }
-    };
-    function createTree(container, obj) {
-      container.innerHTML = createTreeText(obj);
-    }
-    function createTreeText(obj) {
-      let li = '';
-      for (var key in obj) {
-        li = li + '<li>' + key + createTreeText(obj[key]) + '</li>';
-      }
-      if (li) {
-        var ul = '<ul>' + li + '</ul>'
-      }
-      return ul || '';
-    }
-    var container = document.getElementById('container');
-    createTree(container, data);
-  </script>
+  <script type="text/javascript" src="./main.js"></script>
 </body>
 </html>
