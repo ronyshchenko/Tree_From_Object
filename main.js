@@ -26,7 +26,7 @@
        let ul = '';
       Object.entries(obj).forEach(([key, value]) => li = `${li}<li>${key}${createTreeText(value)}</li>`);
         if (li) {
-        ul = '<ul>' + li + '</ul>'
+        ul = `<ul>${li}</ul>`
       }
       return ul || '';
     }
