@@ -22,18 +22,14 @@
     }
     
     function createTreeText(obj) {
-      let li = '';
-      let ul = '';
-      Object.entries(obj).forEach (
-        function([key, value]) {
-            li = li + '<li>' + key + createTreeText(value) + '</li>';
-          });
-      
+       let li = '';
+       let ul = '';
+      Object.entries(obj).forEach(([key, value]) => li = `${li}<li>${key}${createTreeText(value)}</li>`);
         if (li) {
         ul = '<ul>' + li + '</ul>'
       }
       return ul || '';
     }
-    
-    var container = document.getElementById('container');
+
+    const container = document.querySelector('#container');
     createTree(container, data);
